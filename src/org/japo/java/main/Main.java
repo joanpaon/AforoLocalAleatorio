@@ -23,23 +23,24 @@ import java.util.Random;
  */
 public class Main {
 
+    // Instanciar Random
+    public static final Random RND = new Random();
+
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // Constantes
+        final int AFORO_MIN = 0;
         final int AFORO_MAX = 100;
-
-        // Instanciar Random
-        Random rnd = new Random();
 
         // Variable
         int aforo;
 
         // Generar dato
-        aforo = rnd.nextInt(AFORO_MAX + 1);
+        aforo = RND.nextInt(AFORO_MAX - AFORO_MIN + 1) + AFORO_MIN;
 
         // Mensaje
-        System.out.printf("Aforo actual del local ....: %d\n", aforo);
+        System.out.printf("Aforo actual del local ....: %d%n", aforo);
     }
 }
